@@ -18,7 +18,17 @@ func (c *ContaCorrente) Sacar(valorDoSaque float64) string {
 	} else {
 		return "Saldo insuficiente"
 	}
+}
 
+func (c *ContaCorrente) Depostitar(valorDoDeposito float64) string {
+	c.saldo += valorDoDeposito
+
+	if valorDoDeposito > 0 {
+		c.saldo += valorDoDeposito
+		return "Deposito realizado com sucesso."
+	} else {
+		return "Valor do deposito menor que zero"
+	}
 }
 
 func main() {
@@ -26,7 +36,8 @@ func main() {
 	contaDaSilvia.titular = "Silvia"
 	contaDaSilvia.saldo = 500
 
-	fmt.Println(contaDaSilvia.Sacar(-600))
+	fmt.Println(contaDaSilvia.saldo)
+	fmt.Println(contaDaSilvia.Depostitar(2000))
 
 	fmt.Println(contaDaSilvia.saldo)
 
