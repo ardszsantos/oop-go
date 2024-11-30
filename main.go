@@ -7,7 +7,7 @@ import (
 
 func main() {
 	contaExemplo := contas.ContaCorrente{}
-	contaExemplo.Depositar(-100)
+	contaExemplo.Depositar(2000)
 
-	fmt.Println(contaExemplo)
+	fmt.Println(contaExemplo.ObterSaldo())
 }
