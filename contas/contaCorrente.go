@@ -23,8 +23,6 @@ func (c *ContaCorrente) Sacar(valorDoSaque float64) string {
 }
 
 func (c *ContaCorrente) Depositar(valorDoDeposito float64) (string, float64) {
-	c.saldo += valorDoDeposito
-
 	if valorDoDeposito > 0 {
 		c.saldo += valorDoDeposito
 		return "Deposito realizado com sucesso.", c.saldo
