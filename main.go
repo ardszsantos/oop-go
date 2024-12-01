@@ -5,10 +5,18 @@ import (
 	"oop-go/contas"
 )
 
+func PagarBoleto(conta verificarConta, valorDoBoleto float64) {
+	conta.Sacar(valorDoBoleto)
+}
+
+type verificarConta interface {
+	Sacar(valor float64) string
+}
+
 func main() {
 	contaDoDenis := contas.ContaPoupanca{}
 	contaDoDenis.Depositar(100)
-	contaDoDenis.Sacar(2)
+	PagarBoleto(&contaDoDenis, 60)
 
 	fmt.Println(contaDoDenis.ObterSaldo())
 }
